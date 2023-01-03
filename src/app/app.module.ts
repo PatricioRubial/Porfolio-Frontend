@@ -11,6 +11,9 @@ import { SocialComponent } from './components/social/social.component';
 import { FotoPerfilComponent } from './components/foto-perfil/foto-perfil.component';
 import { EstudiosComponent } from './components/estudios/estudios.component';
 import { SkilsComponent } from './components/skils/skils.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { SkilsComponent } from './components/skils/skils.component';
     SocialComponent,
     FotoPerfilComponent,
     EstudiosComponent,
-    SkilsComponent
+    SkilsComponent,
+    FooterComponent,
+    ProyectosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
