@@ -1,0 +1,25 @@
+.row,.proyecto-tittle,.conteiner-tittle{
+padding: 30px;
+background-color: black;
+color: antiquewhite;
+justify-content: center;
+display: flex;
+}
+
+.conteiner{
+    width: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-conteiner, .imagen-conteiner{
+    display: inline-block;
+    text-align: justify;
+    padding: 60px;
+
+}
+
+.img-proyecs{
+  box-shadow: 10px 10px 30px red;
+
+}
