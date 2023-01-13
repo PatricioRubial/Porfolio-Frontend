@@ -1,7 +1,30 @@
-div{
+div,.img,.button-login{
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0em;
+    align-items: center;
 }
 img{
-    max-width: 25%;
+    max-width: 100%;
     height: 100px;
 }
+
+.button-login{
+    width: 30%;
+    height: 74px;
+    padding: 23px;
+    justify-content: flex-end;
+    margin: 12px;
+    
+}
+.logo{
+    padding: 10px;
+    margin: 10px;
+    width: 201px;
+    height: 48px;
+}
+// .row{
+//     width: 100%;
+//     height: 181px;
+// }

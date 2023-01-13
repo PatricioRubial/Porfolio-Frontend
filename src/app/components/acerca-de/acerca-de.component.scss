@@ -1,20 +1,28 @@
-.card{
-     background-color: rgba(231, 223, 223, 0.356);
-    
+.card {
+    background-color: rgba(231, 223, 223, 0.356);
 }
-.h1, h1 {
-    
-    text-align: center;
+
+.h1,
+h1 {
+    text-align: left;
     color: antiquewhite;
 }
-.blockquote-footer,p{
+
+.blockquote-footer,
+p {
     color: antiquewhite;
 }
-.fondo{
-    background-image: url(../../../assets/FondoPage.jpg)  ;
+
+.navbar {
+    background-image: url(../../../assets/FondoPage.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-position: center;
-     min-height: 79vh;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 79vh;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
