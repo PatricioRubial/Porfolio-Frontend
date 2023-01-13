@@ -1,0 +1,3 @@
+<ng-container *ngIf="loading$|async as loading">
+    <span *ngIf="loading.loading == false">{{form.value|json}}</span>
+</ng-container>

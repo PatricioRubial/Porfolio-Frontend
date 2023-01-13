@@ -3,10 +3,15 @@
         <div class="logo">
             <img src="../../../assets/APLogo.png" class="img-fluid" alt="...">
         </div>
-        <div class="button-login">
-            <button type="button" class="btn btn-success">Ingresa a tu Usuario!</button>
+        <div *ngIf="loggedIn$|async; else notLoggedIn" class="button-login">
+            <button type="button" (click)="logOut()" class="btn btn-success">Cerrar sesion</button>
         </div>
+        <ng-template #notLoggedIn>
+            <div class="button-login">
+                <a routerLink="/login" class="btn btn-success">Ingresa a tu Usuario!</a>
+            </div>
+        </ng-template>
     </div>
 
-   
+
 </div>

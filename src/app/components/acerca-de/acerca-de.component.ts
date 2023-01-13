@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-acerca-de',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./acerca-de.component.scss']
 })
 export class AcercaDeComponent {
+  @Input() name!: String;
+  @Input() tittle!: String;
+  @Input() description!: String;
 
 }

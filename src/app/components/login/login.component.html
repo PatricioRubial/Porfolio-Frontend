@@ -1,1 +1,52 @@
-<p>login works!</p>
+<div class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5" style="background-color: rgba(0, 183, 255, 0.671);">
+                <img src="../../../assets/APLogo.png" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <!-- Form Group -->
+                <form #f="ngForm" [formGroup]="login" (ngSubmit)="saveData()">
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-center"
+                        style="background-color: rgba(0, 183, 255, 0.671);">
+                        <p class="lead fw-normal mb-0 me-3">Ingresa</p>
+
+                    </div>
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0"></p>
+                    </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input formControlName="email" type="email" class="form-control form-control-lg"
+                            [class.is-invalid]="login.controls['email'].errors && (f.submitted || login.controls['email'].dirty)"
+                            placeholder="Email" />
+                        <div *ngIf="login.controls['email'].errors && (f.submitted || login.controls['email'].dirty)"
+                            class="invalid-feedback ">
+                            <span *ngIf="login.controls['email'].hasError('required')">Requerido</span>
+                            <span *ngIf="login.controls['email'].hasError('email')">Correo inválido</span>
+                        </div>
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input formControlName="pass" type="password" class="form-control form-control-lg"
+                            placeholder="Ingrese contraseña" />
+                        <div *ngIf="login.controls['pass'].errors && (f.submitted || login.controls['pass'].dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="login.controls['pass'].hasError('required')">Requerido</span>
+                        </div>
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg "
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                    </div>
+                    <div *ngIf="invalidCredentials" style="color: red;">
+                        <span>Usuario o contraseña incorrecto</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    </div>
+</div>
