@@ -13,8 +13,12 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
 import { SkilsComponent } from './components/skils/skils.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { LoginComponent } from './components/login/login.component';
+
 import { NgCircleProgressModule } from 'ng-circle-progress';
+
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+
 
 
 @NgModule({
@@ -30,12 +34,16 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     SkilsComponent,
     FooterComponent,
     ProyectosComponent,
-    LoginComponent
+    LoginComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    ReactiveFormsModule,
+    FormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
