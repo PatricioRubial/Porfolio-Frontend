@@ -16,6 +16,7 @@ export class EstudiosComponent implements OnInit {
   @Input() loggedIn!: boolean | null;
   studies$!: Observable<Study[]>;
 
+
   constructor(private studiesService: StudiesService) {}
 
   ngOnInit(): void {
