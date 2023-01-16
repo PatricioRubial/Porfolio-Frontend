@@ -1,46 +1,53 @@
-<ng-container *ngIf="loading$|async as loading">
-    <span *ngIf="loading.loading == false">{{form.value|json}}</span>
+<section class="vh-100" style="background-image:url(../../../assets/banner2.jpg)">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-12 col-xl-12">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;background-color: #0dcaf07a;">
+                    <ng-container *ngIf="loading$|async as loading">
+                        <span *ngIf="loading.loading == false"></span><br>
+                        <form #f="ngForm" [formGroup]="form" (ngSubmit)="save()">
+                            <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                <label for="institution">Institucion</label>
+                                <input type="text" class="form-control" id="institution" formControlName="institution">
+                            </div>
+                            <br>
+                            <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                <label for="name">Nombre del curso</label>
+                                <input type="text" class="form-control" id="name" formControlName="name">
+                            </div>
+                            <br>
+                            <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                <label for="description">Descripccion del curso</label>
+                                <textarea type="textarea" class="form-control" formControlName="description"></textarea>
+                            </div>
+                            <br>
+                            <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                <label for="link">link</label>
+                                <textarea type="textarea" class="form-control" formControlName="link"></textarea>
+                            </div>
+                            <br>
+                            <form [formGroup]="form">
+                                <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                    <label for="photo">Ingrese la url de la imagen del Curso (opccional)</label><br>
+                                    <input type="text" class="form-control-file" id="photo" formControlName="photo">
+                                </div>
+                            </form><br>
+                            <div class="container col-sm-9 col-md-7 col-lg-5 mx-auto">
+                                <div class="row justify-content-start">
+                                    <div class="col-4">
+                                        <a class="btn btn-warning" routerLink="/home" role="button">enviar</a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a class="btn btn-danger" routerLink="/home" role="button">Cacelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-container>
 
-</ng-container>
 
-<form>
-    <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <label for="exampleFormControlInput1">Institucion</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Institucion">
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <form>
-        <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <label for="exampleFormControlInput1">Nombre del Curso</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Institucion">
-        </div>
-        <br>
-        <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <label for="exampleFormControlTextarea1">Descripccion del Curso</label>
-            <br>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <br>
-        <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <label for="exampleFormControlInput1">Link del Curso (opccional)</label>
-            <br>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Institucion">
-        </div>
-        <br>
-        <form>
-            <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <label for="exampleFormControlFile1">Imagen del Curso (opccional)</label><br>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-        </form><br>
-        <div class="container col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="row justify-content-start">
-                <div class="col-4">
-                    <a class="btn btn-warning" href="#" role="button">enviar</a>
-                </div>
-                <div class="col-4">
-                    <a class="btn btn-danger" href="#" role="button">Cacelar</a>
-                </div>
-            </div>
-        </div>
-    </form>
+</section>

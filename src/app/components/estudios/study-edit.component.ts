@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudiesService } from 'src/app/services/studies.service';
@@ -24,11 +24,5 @@ export class StudyEditComponent extends EditComponent<Study> {
         link: [null],
         photo: [null],
       });
-    }
-    @Input() name!: String;
-    @Input() institution!: String;
-    @Input() description!: String;
-    @Input() photo!: String | null;
-    @Input() tittle!: String | null;
-   
+    } 
 }
