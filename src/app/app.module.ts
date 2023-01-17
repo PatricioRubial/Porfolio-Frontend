@@ -23,6 +23,7 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { AgregarEditarComponent } from './components/agregar-editar/agregar-editar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -53,7 +54,8 @@ import { StudyEditComponent } from './components/estudios/study-edit.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule 
+    FontAwesomeModule,
+    NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
