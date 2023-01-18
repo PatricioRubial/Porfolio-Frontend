@@ -3,7 +3,6 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-12 col-xl-12">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;background-color: #0dcaf07a;">
-
                     <ng-container *ngIf="loading$|async as loading">
                         <span *ngIf="loading.loading == false"></span><br>
                         <form #f="ngForm" [formGroup]="form" (ngSubmit)="save()">
@@ -45,8 +44,6 @@
                             </div>
                         </form>
                     </ng-container>
-
-
                 </div>
             </div>
         </div>

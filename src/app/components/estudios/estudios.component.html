@@ -15,7 +15,7 @@
     <br>
   </div>
   <div class="estudios-conteiner">
-    <ng-container *ngFor="let study of studies$|async">
+    <ng-container *ngFor="let study of items$|async">
       <div class="card">
         <ngb-accordion [closeOthers]="true" activeIds="static-2">
         <ngb-panel id="static-2">
