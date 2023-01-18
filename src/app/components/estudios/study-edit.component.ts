@@ -9,6 +9,7 @@ import { EditComponent } from 'src/app/infrastructure/edit.component';
   templateUrl: 'study-edit.component.html',
 })
 export class StudyEditComponent extends EditComponent<Study> {
+  
   constructor(
     fb: FormBuilder,
     route: ActivatedRoute,
@@ -25,4 +26,5 @@ export class StudyEditComponent extends EditComponent<Study> {
         photo: [null],
       });
     } 
-}
+    
+  }

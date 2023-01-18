@@ -8,100 +8,29 @@
 </div>
 <div class="album py-5 bg-dark">
   <h1 class="font-weight-light">Estudios</h1>
-  <a routerLink="/studies/new">
-    <fa-icon routerLinkActive="router-link-active" [icon]="faPlus"></fa-icon>
-  </a>
-  <div class="container">
+  <div *ngIf="loggedIn" class="container">
     <div class="row row-cols-1 row-cols-md-8 g-8">
-      <ng-container *ngFor="let study of studies$|async">
-        <div *ngIf="loggedIn" class="col">
-          <div class="card">
-            <a [routerLink]="['/studies', study.id, 'edit']">
-              <fa-icon routerLinkActive="router-link-active" [icon]="faEdit"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img *ngIf="study.photo" [src]="study.photo" class="card-img-top" [alt]="study.name">
-            <div class="card-body">
-              <h5 class="card-title">{{study.institution}}</h5>
-              <h6 class="card-text">{{study.name}}</h6>
-              <small>{{study.description}}</small>
-            </div>
-          </div>
-          <br>
-        </div>
-      </ng-container>
-
-<!--       
-      <div class="col">
-        <div class="card">
-          <img src="../../../assets/edx.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">EDX</h5>
-            <p class="card-text">Introduccuion a la programacion y Conceptos basicos</p>
-            <ul>
-              <li>¿Qué es un programa?</li>
-              <li>Usar variables en programas</li>
-              <li>Ejecución condicional (si son declaraciones)</li>
-              <li>Ejecución / bucles repetidos (para declaraciones)</li>
-              <li> Funciones y reutilización de Código</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../../../assets/EducacionIt.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">EducacionIt</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <ul>
-              <li>¿Qué es un programa?</li>
-              <li>Usar variables en programas</li>
-              <li>Ejecución condicional (si son declaraciones)</li>
-              <li>Ejecución / bucles repetidos (para declaraciones)</li>
-              <li> Funciones y reutilización de Código</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../../../assets/logoArgProg2.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">#Argentina Programa</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content.</p>
-            <ul>
-              <li>¿Qué es un programa?</li>
-              <li>Usar variables en programas</li>
-              <li>Ejecución condicional (si son declaraciones)</li>
-              <li>Ejecución / bucles repetidos (para declaraciones)</li>
-              <li> Funciones y reutilización de Código</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../../../assets/Udemy-Symbol.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Udemy</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <ul>
-              <li>¿Qué es un programa?</li>
-              <li>Usar variables en programas</li>
-              <li>Ejecución condicional (si son declaraciones)</li>
-              <li>Ejecución / bucles repetidos (para declaraciones)</li>
-              <li> Funciones y reutilización de Código</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a class="btn btn-primary" routerLink="/studies/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo estudio</a>
     </div>
+    <br>
   </div>
-</div> -->
+  <div class="estudios-conteiner">
+    <ng-container *ngFor="let study of studies$|async">
+      <div class="card">
+        <ngb-accordion [closeOthers]="true" activeIds="static-2">
+        <ngb-panel id="static-2">
+          <ng-template ngbPanelTitle >
+            <span>&#x265b; <b>{{study.institution}} </b>&#x265b; {{study.name}} </span>
+          </ng-template>
+          <ng-template ngbPanelContent >{{study.description}}
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      <div *ngIf="loggedIn" class="col p-3">
+        <a class="btn btn-primary me-3" [routerLink]="['/studies', study.id, 'edit']"><fa-icon [icon]="faEdit" class="me-2"></fa-icon>Editar</a>
+        <button  class="btn btn-danger"  type="button" (click)="delete(study.id)"><a ><fa-icon [icon]="faTrash" class="me-2"></fa-icon></a> Borrar</button>      
+      </div>      
+    </div>
+    <br>
+  </ng-container>
+</div>

@@ -18,24 +18,27 @@ export class ProfileService {
     this.loggedIn$.next(loggedIn);
   }
 
-
   getProfile(): Observable<Profile> {
     return this.httpClient.get<Profile>(`${environment.apiUrl}/profiles`);
   }
 
   login(email: string, password: string): Observable<boolean> {
     return this.httpClient
-      .post<Profile>(`${environment.apiUrl}/profiles/login`, { email, password })
+      .post<Profile>(`${environment.apiUrl}/profiles/login`, {
+        email,
+        password,
+      })
       .pipe(
         catchError((x, y) => {
-           if (x?.status === 401) {
-             return of(false);
-           }
+          if (x?.status === 401) {
+            return of(false);
+          }
 
-           return y;
+          return y;
         }),
-        map(x => !!x),
-        tap(this.saveState));
+        map((x) => !!x),
+        tap(this.saveState)
+      );
   }
 
   logout() {
@@ -45,5 +48,5 @@ export class ProfileService {
   private saveState = (state: boolean): void => {
     localStorage.setItem(PROFILE_KEY, JSON.stringify(state));
     this.loggedIn$.next(state);
-  }
+  };
 }
