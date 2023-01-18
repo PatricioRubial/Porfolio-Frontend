@@ -16,7 +16,7 @@ export abstract class CrudService<TEntity extends { [key: string]: any; }> {
     }
 
     create(entity: TEntity) {
-        return this.httpClient.post<TEntity>(`${environment.apiUrl}/${this.resourceName}/`, entity);
+        return this.httpClient.post<TEntity>(`${environment.apiUrl}/${this.resourceName}`, entity);
     }
 
     update(id: number, entity: TEntity) {

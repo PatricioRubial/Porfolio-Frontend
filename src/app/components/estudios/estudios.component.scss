@@ -15,21 +15,14 @@
         text-align: center;   
         padding: 20px; 
 }
-img{
+.img{
     width: 304px;
     height: 304px;
 }
-.card{
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color:#000000f0;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    box-shadow: 10 10 30 red;
-    color: antiquewhite;
+.estudios-conteiner{
+    padding: 10px;
+    background-color:#00010108;
 }
-
+template{
+    background-color: black;
+}

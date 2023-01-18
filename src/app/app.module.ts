@@ -26,7 +26,6 @@ import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +43,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponentComponent,
     AgregarEditarComponent,
     StudyEditComponent
-   
   ],
   imports: [
     BrowserModule,
@@ -57,7 +55,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NgbModule 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
