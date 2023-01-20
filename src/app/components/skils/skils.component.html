@@ -1,131 +1,34 @@
 <div class="row">
   <h1>Hard & Soft Skills</h1>
 
-  <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-    <circle-progress
-    [percent]="90"
-    [radius]="100"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    imageSrc="../../../assets/html.png"
-    [imageHeight]="90"
-    [imageWidth]="90"
-    [showImage]="true"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="2"
-    [outerStrokeColor]="'orange'"
-    [innerStrokeColor]="'orange'"
-    
-    [animation]="true"
-    [animationDuration]="3300"
-    ></circle-progress>
-    <p>Idiomas</p>
-    </div>
-
-    <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-      <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      imageSrc="../../../assets/cssicon2.png"
-      [imageHeight]="90"
-      [imageWidth]="90"
-      [showImage]="true"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'blue'"
-      [innerStrokeColor]="'blue'"
-      
-      [animation]="true"
-      [animationDuration]="3300"
-      ></circle-progress>
-      <p>Idiomas</p>
-      </div>
-
-      <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="90"
-        [radius]="100"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        imageSrc="../../../assets/JSnofondo2.png"
-        [imageHeight]="90"
-        [imageWidth]="90"
-        [showImage]="true"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'yellow'"
-        [innerStrokeColor]="'yellow'"
-        
-        [animation]="true"
-        [animationDuration]="3300"
-        ></circle-progress>
-        <p>Idiomas</p>
-        </div>
-
+  <div  *ngIf="loggedIn"  class="container">
+    <div class="row row-cols-1 row-cols-md-8 g-8">
+      <a class="btn btn-primary" routerLink="/skills-profiles/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo skill</a>    
+      <ng-container *ngFor="let skill of items$|async"> 
         <div class="text-center col-sm-4 col-mg-4 col-lg-4">
           <circle-progress
-          [percent]="90"
+          [percent]="skill.percentage"
           [radius]="100"
           [showUnits]="false"
           [showSubtitle]="false"
-          imageSrc="../../../assets/angular-icon.png"
+          imageSrc="../../../assets/html.png"
           [imageHeight]="90"
           [imageWidth]="90"
           [showImage]="true"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="2"
-          [outerStrokeColor]="'red'"
-          [innerStrokeColor]="'red'"
-          
+          [outerStrokeColor]="skill.color"
+          [innerStrokeColor]="'orange'"    
           [animation]="true"
           [animationDuration]="3300"
           ></circle-progress>
-          <p>Idiomas</p>
-          </div>
-
-          <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-            <circle-progress
-            [percent]="90"
-            [radius]="100"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            imageSrc="../../../assets/cSharp.png"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showImage]="true"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'violet'"
-            [innerStrokeColor]="'violet'"
-            
-            [animation]="true"
-            [animationDuration]="3300"
-            ></circle-progress>
-            <p>Idiomas</p>
-            </div>
-
-            <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-              <circle-progress
-              [percent]="90"
-              [radius]="100"
-              [showUnits]="false"
-              [showSubtitle]="false"
-              imageSrc="../../../assets/giticon.png"
-              [imageHeight]="90"
-              [imageWidth]="90"
-              [showImage]="true"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="2"
-              [outerStrokeColor]="'green'"
-              [innerStrokeColor]="'green'"
-              
-              [animation]="true"
-              [animationDuration]="3300"
-              ></circle-progress>
-              <p>Idiomas</p>
-            </div>
-
-
-</div>
+          <p style="color: antiquewhite;">{{skill.name}}</p><br>
+          <div  *ngIf="loggedIn" skills-profiles class="col p-3">
+            <a class="btn btn-primary me-3" [routerLink]="['/skills-profiles', skill.id, 'edit']"><fa-icon [icon]="faEdit" class="me-2"></fa-icon>Editar</a>
+            <button  class="btn btn-danger"  type="button" (click)="delete(skill.id)"><a ><fa-icon [icon]="faTrash" class="me-2"></fa-icon></a> Borrar</button>      
+          </div>    
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  
