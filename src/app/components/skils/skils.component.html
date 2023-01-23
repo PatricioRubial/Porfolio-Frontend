@@ -1,9 +1,11 @@
 <div class="row">
   <h1>Hard & Soft Skills</h1>
 
-  <div  *ngIf="loggedIn"  class="container">
-    <div class="row row-cols-1 row-cols-md-8 g-8">
-      <a class="btn btn-primary" routerLink="/skills-profiles/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo skill</a>    
+  <div   class="container">
+    <div  class="row row-cols-1 row-cols-md-8 g-8">
+      <div class="row row-cols-1 row-cols-md-8 g-8"*ngIf="loggedIn" >
+        <a class="btn btn-primary" routerLink="/skills-profiles/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo skill</a>    
+      </div>
       <ng-container *ngFor="let skill of items$|async"> 
         <div class="text-center col-sm-4 col-mg-4 col-lg-4">
           <circle-progress

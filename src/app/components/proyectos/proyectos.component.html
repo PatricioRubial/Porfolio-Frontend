@@ -1,10 +1,12 @@
 <div class="row"><div class="proyecto-tittle">
     <h1>Proyectos Realizados</h1>
 </div>
+<div *ngIf="loggedIn" class="row row-cols-1 row-cols-md-8 g-8" >
+    <a class="btn btn-primary" routerLink="/proyects/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo Proyecto</a>  
+</div>
 
-<a class="btn btn-primary" routerLink="/proyects/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo Proyecto</a>  
 <ng-container *ngFor="let proyects of items$|async">
-    <div  *ngIf="loggedIn" class="container">
+    <div   class="container">
         <!-- Text -->
             <div class="col-sm-12 col-md-7 col-lg-7 texto-container">
                 <h3 class="conteiner-tittle">{{proyects.name}}</h3>
