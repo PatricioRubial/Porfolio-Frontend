@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProyectsEditComponent } from './components/proyectos/proyects-edit.component';
+import { ProjectsEditComponent } from './components/proyectos/projects-edit.component';
 import { SkillEditComponent } from './components/skils/skill-edit.component';
 
 
@@ -38,15 +38,15 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'proyects',
+    path: 'projects',
     children: [
       {
         path: 'new',
-        component: ProyectsEditComponent,
+        component: ProjectsEditComponent,
       },
       {
         path: ':id/edit',
-        component: ProyectsEditComponent,
+        component: ProjectsEditComponent,
       },
     ],
   },

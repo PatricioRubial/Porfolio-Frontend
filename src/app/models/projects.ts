@@ -1,5 +1,5 @@
 
-export interface Proyects 
+export interface Projects 
 {
     id: number;
     name: string;
