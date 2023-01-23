@@ -10,27 +10,32 @@
   <h1 class="font-weight-light">Estudios</h1>
   <div *ngIf="loggedIn" class="container">
     <div class="row row-cols-1 row-cols-md-8 g-8">
-      <a class="btn btn-primary" routerLink="/studies/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo estudio</a>
+      <a class="btn btn-primary" routerLink="/studies/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo
+        estudio</a>
     </div>
     <br>
   </div>
   <div class="estudios-conteiner">
     <ng-container *ngFor="let study of items$|async">
-      <div class="card">
-        <ngb-accordion [closeOthers]="true" activeIds="static-2">
-        <ngb-panel id="static-2">
-          <ng-template ngbPanelTitle >
-            <span>&#x265b; <b>{{study.institution}} </b>&#x265b; {{study.name}} </span>
-          </ng-template>
-          <ng-template ngbPanelContent >{{study.description}}
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-      <div *ngIf="loggedIn" class="col p-3">
-        <a class="btn btn-primary me-3" [routerLink]="['/studies', study.id, 'edit']"><fa-icon [icon]="faEdit" class="me-2"></fa-icon>Editar</a>
-        <button  class="btn btn-danger"  type="button" (click)="delete(study.id)"><a ><fa-icon [icon]="faTrash" class="me-2"></fa-icon></a> Borrar</button>      
-      </div>      
-    </div>
-    <br>
-  </ng-container>
-</div>
+      <div class="card estudios-conteiner">
+        <ngb-accordion  [closeOthers]="true">
+          <ngb-panel id="static-2">
+            <ng-template ngbPanelTitle>
+              <div class="img-container"><img src="{{study.photo}}" class="img-fluid" alt="...">
+              </div>
+              <span>&#x265b; <b>{{study.institution}} </b>&#x265b; {{study.name}} </span>
+            </ng-template>
+            <ng-template ngbPanelContent>{{study.description}}
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+        <div *ngIf="loggedIn" class="col p-3">
+          <a class="btn btn-primary me-3" [routerLink]="['/studies', study.id, 'edit']"><fa-icon [icon]="faEdit"
+              class="me-2"></fa-icon>Editar</a>
+          <button class="btn btn-danger" type="button" (click)="delete(study.id)"><a><fa-icon [icon]="faTrash"
+                class="me-2"></fa-icon></a> Borrar</button>
+        </div>
+      </div>
+      <br>
+    </ng-container>
+  </div>

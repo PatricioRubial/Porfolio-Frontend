@@ -15,3 +15,12 @@ a.nostyle:visited {
     color: inherit;
     cursor: auto;
 }
+
+.accordion-button.collapsed, .accordion-body, .accordion-button:not(.collapsed) {
+    color: antiquewhite;
+    background: rgba(0, 0, 0, 0.932);
+}
+.accordion-body {
+    color: antiquewhite;
+    background: rgba(0, 0, 0, 0.603);
+}

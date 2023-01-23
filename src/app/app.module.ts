@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SkillEditComponent } from './components/skils/skill-edit.component';
+import { ProyectsEditComponent } from './components/proyectos/proyects-edit.component';
 
 
 
@@ -45,7 +46,8 @@ import { SkillEditComponent } from './components/skils/skill-edit.component';
     HomeComponentComponent,
     AgregarEditarComponent,
     StudyEditComponent,
-    SkillEditComponent
+    SkillEditComponent,
+    ProyectsEditComponent
   ],
   imports: [
     BrowserModule,

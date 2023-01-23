@@ -22,7 +22,7 @@ constructor(
     percentage: [null, Validators.required],
     name: [null, Validators.required],
     color: [null, Validators.required],
-    icon: [null],
+    icon: [null ],
     });
 }
 }

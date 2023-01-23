@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProyectsEditComponent } from './components/proyectos/proyects-edit.component';
 import { SkillEditComponent } from './components/skils/skill-edit.component';
 
 
@@ -36,9 +37,21 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'proyects',
+    children: [
+      {
+        path: 'new',
+        component: ProyectsEditComponent,
+      },
+      {
+        path: ':id/edit',
+        component: ProyectsEditComponent,
+      },
+    ],
+  },
+
   { path: '**', redirectTo: 'home' },
-
-
 ];
 
 @NgModule({
