@@ -2,24 +2,24 @@
     <h1>Proyectos Realizados</h1>
 </div>
 <div *ngIf="loggedIn" class="row row-cols-1 row-cols-md-8 g-8" >
-    <a class="btn btn-primary" routerLink="/proyects/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo Proyecto</a>  
+    <a class="btn btn-primary" routerLink="/projects/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo Proyecto</a>  
 </div>
 
-<ng-container *ngFor="let proyects of items$|async">
+<ng-container *ngFor="let projects of items$|async">
     <div   class="container">
         <!-- Text -->
             <div class="col-sm-12 col-md-7 col-lg-7 texto-container">
-                <h3 class="conteiner-tittle">{{proyects.name}}</h3>
-                <p class="container-description">{{proyects.description}}</p>
+                <h3 class="conteiner-tittle">{{projects.name}}</h3>
+                <p class="container-description">{{projects.description}}</p>
             </div>
             <!-- IMG -->
             <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 imagen-conteiner">
-                <img src="{{proyects.photo}}" alt="" class="img-proyecs">
+                <img src="{{projects.photo}}" alt="" class="img-proyecs">
             </div>
         </div>
         <div *ngIf="loggedIn" class="col p-3">
-            <a class="btn btn-primary me-3" [routerLink]="['/proyects', proyects.id, 'edit']"><fa-icon [icon]="faEdit" class="me-2"></fa-icon>Editar</a>
-            <button  class="btn btn-danger"  type="button" (click)="delete(proyects.id)"><a ><fa-icon [icon]="faTrash" class="me-2"></fa-icon></a> Borrar</button>      
+            <a class="btn btn-primary me-3" [routerLink]="['/projects', projects.id, 'edit']"><fa-icon [icon]="faEdit" class="me-2"></fa-icon>Editar</a>
+            <button  class="btn btn-danger"  type="button" (click)="delete(projects.id)"><a ><fa-icon [icon]="faTrash" class="me-2"></fa-icon></a> Borrar</button>      
           </div>  
 
 

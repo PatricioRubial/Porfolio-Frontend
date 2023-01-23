@@ -2,20 +2,20 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditComponent } from 'src/app/infrastructure/edit.component';
-import { Proyects } from 'src/app/models/proyects';
-import { ProyectsService } from 'src/app/services/proyects.service';
+import { Projects } from 'src/app/models/projects';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
-  templateUrl: 'proyects-edit.component.html',
+  templateUrl: 'projects-edit.component.html',
 })
-export class ProyectsEditComponent extends EditComponent<Proyects> {
+export class ProjectsEditComponent extends EditComponent<Projects> {
   constructor(
     fb: FormBuilder,
     route: ActivatedRoute,
-    proyectsService: ProyectsService,
+    projectsService: ProjectsService,
     router: Router
   ) {
-    super(fb, route, proyectsService, router);
+    super(fb, route, projectsService, router);
 
     this.form = this.fb.group({
         name: [null, Validators.required],

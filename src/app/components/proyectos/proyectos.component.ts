@@ -1,19 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ListComponent } from 'src/app/infrastructure/list.component';
-import { Proyects } from 'src/app/models/proyects';
+import { Projects } from 'src/app/models/projects';
 
-import { ProyectsService } from 'src/app/services/proyects.service';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
   styleUrls: ['./proyectos.component.scss']
 })
-export class ProyectosComponent extends ListComponent<Proyects> {
+export class ProyectosComponent extends ListComponent<Projects> {
   @Input() loggedIn!: boolean | null;
   
-  constructor(proyectsService: ProyectsService, modalService: NgbModal) {
-    super(proyectsService, modalService);
+  constructor(projectsService: ProjectsService, modalService: NgbModal) {
+    super(projectsService, modalService);
   }
 }
