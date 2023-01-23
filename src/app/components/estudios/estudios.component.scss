@@ -1,17 +1,34 @@
-.banerestudios{
-    background-image:url(../../../assets/estudios-banners.jpg);
+.banerestudios {
+    background-image: url(../../../assets/estudios-banners.jpg);
     background-position: center;
-     background-repeat: no-repeat;
-     background-size:cover;  
-     width: 100%;
-     height: 440px;
-     
-    }
-    .font-weight-light{
-        font-style: italic;
-        font-family: auto;
-        color: antiquewhite;
-        font-size: 3rem; 
-        text-align: center;   
-        padding: 20px; 
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 440px;
+
+}
+
+.font-weight-light {
+    font-style: italic;
+    font-family: auto;
+    color: antiquewhite;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.img-container {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-fluid {
+    max-width: 51%;
+    height: auto;
+}
+
+.estudios-conteiner {
+    background-color: transparent;
+    ;
+}
