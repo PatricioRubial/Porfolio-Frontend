@@ -3,6 +3,6 @@ export interface Profile {
   name: string;
   tittle: string;
   description: String;
-  git_hub: string;
-  linked_in: string;
+  gitHub: string;
+  linkedIn: string;
 }

@@ -4,7 +4,7 @@
 
 .h1,
 h1 {
-    text-align: left;
+    text-align: center;
     color: antiquewhite;
 }
 
@@ -24,5 +24,15 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.foto {
+    height: 37vh;
+    width: 37vh;
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    padding-top: 14px;
 }
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, catchError, delay, map, Observable, of, tap } from 'rxjs';
 import { Profile } from '../models/profile';
 import { environment } from '../../environments/environment';
 
@@ -37,12 +37,16 @@ export class ProfileService {
           return y;
         }),
         map((x) => !!x),
-        tap(this.saveState)
+        tap(this.saveState) 
       );
   }
 
   logout() {
     this.saveState(false);
+  }
+
+  updateProfile(profile: Profile): Observable<any> {
+    return this.httpClient.put(`${environment.apiUrl}/profiles`, profile)
   }
 
   private saveState = (state: boolean): void => {
