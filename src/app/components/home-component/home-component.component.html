@@ -1,12 +1,17 @@
 <ng-container *ngIf="profile$|async as profile">
-    <app-header [photo]="profile.photo"></app-header>
-    <app-acerca-de
+    <app-header ></app-header>
+    <app-acerca-de 
+    [loggedIn]="loggedIn$|async"
     [name]="profile.name"
     [tittle]="profile.tittle"
     [description]="profile.description"
-    ></app-acerca-de>
+    [photo]="profile.photo">
+</app-acerca-de>
     <app-estudios [loggedIn]="loggedIn$|async"></app-estudios>
     <app-skils [loggedIn]="loggedIn$|async"></app-skils>
     <app-proyectos [loggedIn]="loggedIn$|async"></app-proyectos>
-    <app-footer></app-footer>
+    <app-footer
+    [loggedIn]="loggedIn$|async"
+    [gitHub]="profile.gitHub"
+    [linkedIn]="profile.linkedIn"></app-footer> 
 </ng-container>

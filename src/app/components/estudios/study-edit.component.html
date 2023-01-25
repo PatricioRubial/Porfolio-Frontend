@@ -4,11 +4,12 @@
             <div class="col-12 col-md-8 col-lg-12 col-xl-12">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;background-color: #0dcaf07a;">
                     <ng-container *ngIf="loading$|async as loading">
-                        <span *ngIf="loading.loading == false"></span><br>
-                        <form #f="ngForm" [formGroup]="form" (ngSubmit)="save()">
+                        <br>
+                        <form *ngIf="loading.loading == false; else loadingTemplate" #f="ngForm" [formGroup]="form"
+                            (ngSubmit)="save()">
                             <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
                                 <label for="institution">Institucion</label>
-                                <input type="text" class="form-control" id="institution" formControlName="institution" >
+                                <input type="text" class="form-control" id="institution" formControlName="institution">
                             </div>
                             <br>
                             <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -26,7 +27,7 @@
                                 <textarea type="textarea" class="form-control" formControlName="link"></textarea>
                             </div>
                             <br>
-                            <form [formGroup]="form" >
+                            <form [formGroup]="form">
                                 <div class="form-group col-sm-9 col-md-7 col-lg-5 mx-auto">
                                     <label for="photo">Ingrese la url de la imagen del Curso (opccional)</label><br>
                                     <input type="text" class="form-control-file" id="photo" formControlName="photo">
@@ -35,7 +36,7 @@
                             <div class="container col-sm-9 col-md-7 col-lg-5 mx-auto">
                                 <div class="row justify-content-start">
                                     <div class="col-4">
-                                        <button class="btn btn-warning">Enviar</button>
+                                        <button class="btn btn-warning">Guardar</button>
                                     </div>
                                     <div class="col-4">
                                         <a class="btn btn-danger" routerLink="/home" role="button">Cancelar</a>
@@ -43,6 +44,13 @@
                                 </div>
                             </div>
                         </form>
+                        <ng-template #loadingTemplate>
+                            loading...
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                                    style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </ng-template>
                     </ng-container>
                 </div>
             </div>
