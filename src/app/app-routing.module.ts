@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileEditComponent } from './components/acerca-de/profile-edit.component';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { LoginComponent } from './components/login/login.component';
@@ -50,7 +51,8 @@ const routes: Routes = [
       },
     ],
   },
-
+  { path: 'profile/edit', component: ProfileEditComponent },
+  
   { path: '**', redirectTo: 'home' },
 ];
 

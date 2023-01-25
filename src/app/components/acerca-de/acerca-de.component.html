@@ -1,15 +1,25 @@
-  <div class="fondo">
+
+ <div class="fondo">
     <nav id="navbar-example2" class="navbar navbar-light bg-dark px-3">
-      <!-- <h1 style="color: antiquewhite">Acerca de Mi</h1> -->
+      <div class="fondo">
+        <h1 style="color: antiquewhite ;text-align: center;">Acerca de Mi</h1>
+        <div class="text-center foto">
+          <img src="{{photo}}" class="foto" alt="">
+        </div>
+      </div>
       <div class="card">
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <h1><strong>{{name}}.</strong></h1><br>
             <p><strong>{{tittle}}</strong></p><br>
             <footer class="blockquote-footer"> <cite title="Source title">{{description}}.</cite></footer>
-        </blockquote>
+          </blockquote>
+        </div>
       </div>
-    </div>
+      <div  class="col p-3">
+        <a class="btn btn-primary me-3" [routerLink]="['/profile','edit']"><fa-icon [icon]="faEdit"
+            class="me-2"></fa-icon>Editar perfil</a></div>
   </nav>
 </div>
+
 
