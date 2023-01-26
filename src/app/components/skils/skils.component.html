@@ -7,7 +7,7 @@
         <a class="btn btn-primary" routerLink="/skills-profiles/new"><fa-icon [icon]="faPlus" class="me-2"></fa-icon>Nuevo skill</a>    
       </div>
       <ng-container *ngFor="let skill of items$|async"> 
-        <div class="text-center col-sm-4 col-mg-4 col-lg-4">
+        <div class="text-center col-sm-4 col-mg-4 col-lg-4 img-fluid" >
           <circle-progress
           [percent]="skill.percentage"
           [radius]="100"

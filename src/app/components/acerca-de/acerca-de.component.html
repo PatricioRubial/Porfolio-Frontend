@@ -16,7 +16,7 @@
           </blockquote>
         </div>
       </div>
-      <div  class="col p-3">
+      <div *ngIf="loggedIn" class="col p-3">
         <a class="btn btn-primary me-3" [routerLink]="['/profile','edit']"><fa-icon [icon]="faEdit"
             class="me-2"></fa-icon>Editar perfil</a></div>
   </nav>
