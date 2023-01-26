@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { ProfileEditComponent } from './components/acerca-de/profile-edit.component';
 import { StudyEditComponent } from './components/estudios/study-edit.component';
 import { HomeComponentComponent } from './components/home-component/home-component.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'studies',
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'new',
@@ -27,6 +29,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'skills-profiles',
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'new',
@@ -40,6 +43,7 @@ const routes: Routes = [
   },
   {
     path: 'projects',
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'new',
@@ -51,9 +55,9 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'profile/edit', component: ProfileEditComponent },
+  { path: 'profile/edit',  canActivate: [AuthGuard], component: ProfileEditComponent },
   
-  { path: '**', redirectTo:'/home'},
+  { path: '**', redirectTo:'home'},
 ];
 
 @NgModule({
