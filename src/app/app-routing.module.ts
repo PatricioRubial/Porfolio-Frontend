@@ -53,8 +53,7 @@ const routes: Routes = [
   },
   { path: 'profile/edit', component: ProfileEditComponent },
   
-  { path: '**', pathMatch: 'full', 
-        component: NotFoundComponent },
+  { path: '**', redirectTo:'/home'},
 ];
 
 @NgModule({

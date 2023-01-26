@@ -26,7 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SkillEditComponent } from './components/skils/skill-edit.component';
 import { ProjectsEditComponent as ProjectsEditComponent } from './components/proyectos/projects-edit.component';
 import { ProfileEditComponent } from './components/acerca-de/profile-edit.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SkillEditComponent,
     ProjectsEditComponent,
     ProfileEditComponent,
-    NotFoundComponent,
+    LoadingComponent,
 
   ],
   imports: [
